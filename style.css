@@ -1,0 +1,147 @@
+body {
+  background: url(./akaza-wallpaper.jpg) center/cover;
+  min-height: 100vh;
+}
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  text-align: center;
+  font-size: 2.5rem;
+  text-shadow: 5px 4px 9px #00000094;
+  color: rgb(253 251 251 / 66%);
+  text-decoration: underline;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+main {
+  min-height: 500px;
+  width: 90%;
+  background-color: rgba(255, 255, 255, 0.623);
+  margin: 0 auto;
+  border: solid rgba(49, 2, 2, 0.699);
+  border-radius: 20px;
+  box-shadow: 1px 2px 20px 5px #e9b133;
+  padding: 15px;
+}
+h2 {
+  margin: 0;
+}
+
+.flexbox,
+.grid , .absolute {
+  border: 2px solid #db9a3b59;
+  border-radius: 10px;
+  margin-top: 20px;
+  min-height: 150px;
+}
+
+.flexbox ul {
+  padding: 0;
+  display: flex;
+  justify-content: space-around;
+}
+
+.flexbox li {
+  list-style: none;
+  height: 160px;
+  width: 160px;
+  margin: 10px;
+  background-color: #c5911c4d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.grid img {
+  width: 100%;
+  margin-top: 25px;
+}
+
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-areas: 
+  "i1 i1"
+  "ta ta"
+  "vi bt";
+}
+
+input , textarea{
+    margin: 5px;
+    border: 1px solid black;
+    padding: 10px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 5px;
+}
+
+textarea{
+    grid-area: ta;
+    height: 40px;
+    resize: none;
+}
+
+#btn-submit{
+    grid-area: bt;
+    cursor: pointer;
+    background-color: #cb402d87;
+    transition: 0.2s;
+
+}
+#btn-submit:hover{
+    background-color: rgba(129, 19, 19, 0.849);
+}
+
+.absolute{
+  position: relative;
+}
+
+#circle1 {
+  height: 80px;
+  width: 80px;
+  background-color: #e9b133;
+  position: absolute;
+  border-radius: 150px;
+  top: 0;
+  right: 0;
+}
+
+#circle2{
+  height: 40px;
+  width: 40px;
+  background: #e9b133;
+  border-radius: 150px;
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+@media screen and (max-width: 600px) {
+ .grid-container {
+  display: block;
+
+ }
+}
+
+@media screen and (max-width: 420px) {
+  .flexbox ul{
+    flex-direction: column;
+    align-items: center;
+    
+  }
+  form {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+    "i1"
+    "i2"
+    "ta"
+    "bt";
+  }
+}
